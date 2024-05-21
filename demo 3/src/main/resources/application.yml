@@ -1,0 +1,29 @@
+spring:
+
+  datasource:
+
+    driver-class-name: org.postgresql.Driver
+
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:1111/course}
+
+    username: postgres
+
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+  flyway:
+
+    url: ${POSTGRES_URL:jdbc:postgresql://localhost:1111/course}
+
+    user: postgres
+
+    password: 123456
+
+    enabled: true
+
+    locations:
+      - 'classpath:db/migration'
